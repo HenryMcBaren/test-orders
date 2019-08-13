@@ -1,0 +1,12 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10% auto;
+    width: 200px;
+    height: 200px;
+}
+
+.home-page h3, .home-page button {
+    margin: 10px 0;
+}

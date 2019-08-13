@@ -1,0 +1,122 @@
+.edit-form {
+  display: flex;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #009cd5;
+  width: 100%;
+  height: 50px;
+  justify-content: space-around;
+  box-shadow: inset 0 6px 5px -5px black;
+  margin-bottom: 5px;
+}
+.edit-form__cancel-button {
+  display: none;
+}
+.edit-form__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto 5px;
+  width: 11%;
+}
+.edit-form input,
+.edit-form .custom-select {
+  width: 100%;
+  margin: auto;
+}
+.edit-form__button {
+  box-shadow: 0 0 3px 0 white;
+  width: 105px;
+}
+.edit-form__btn-box {
+  width: 115px;
+  align-items: center;
+  padding: 5px;
+  margin: auto 0;
+}
+.fixed-msg {
+  position: fixed;
+  top: 0;
+}
+
+@media screen and (max-width: 1300px) {
+  .edit-form {
+    position: fixed;
+    border: 1px solid #009cd5;
+    top: 5%;
+    left: 50%;
+    margin-left: -25%;
+    background-color: white;
+    flex-direction: column;
+    height: 600px;
+    box-shadow: 0 0 0 0;
+    min-width: 400px;
+    width: 50%;
+  }
+  .edit-form__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+  }
+  .edit-form__btn-box {
+    width: 100%;
+    margin: 0 0 10px 0;
+    text-align: center;
+  }
+  .edit-form__btn-box .btn {
+    width: 50%;
+  }
+  .edit-form input,
+  .edit-form select {
+    width: 60% !important;
+    margin: 0 !important;
+  }
+  .edit-form__box:before {
+    content: attr(data-label);
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+  }
+  .edit-form__cancel-button {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .edit-form {
+    position: fixed;
+    left: 0;
+    border: 1px solid #009cd5;
+    background-color: white;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10%;
+    height: 500px;
+    box-shadow: 0 0 0 0;
+    width: 100vw;
+    min-width: 320px;
+  }
+}
+
+@media screen and (max-height: 550px) {
+  .edit-form {
+    height: 280px;
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: 20px;
+  }
+  .edit-form input,
+  .edit-form select {
+    height: 25px !important;
+    padding: 0 5px;
+  }
+  .edit-form__box {
+    margin: 0 auto;
+  }
+  .edit-form__btn-box {
+    margin-bottom: 0;
+  }
+}

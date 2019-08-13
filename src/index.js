@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router } from "react-router-dom";
+import ErrorBoundry from "./components/ErrorBoundry";
+import { OrderServiceProvider } from "./components/OrderServiceContext";
+import { OrderService } from "./services";
+import store from "./store";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const orderService = new OrderService()
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <Provider store={store}>
+    <ErrorBoundry>
+      <OrderServiceProvider value={orderService}>
+        <Router>
+          <App />
+        </Router>
+      </OrderServiceProvider>
+    </ErrorBoundry>
+  </Provider>,
+  document.getElementById("root")
+);
